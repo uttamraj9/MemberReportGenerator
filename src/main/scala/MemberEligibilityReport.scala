@@ -13,8 +13,8 @@ object MemberEligibilityReport {
     val spark = SparkSession.builder.config(sc.getConf).getOrCreate()
 
     // Load datasets
-    val memberEligibilityRDD = loadCSVAsRDD(sc, "/Users/uttamkumar/Desktop/Training/InteliJ/MemberReportGenerator/data/member_eligibility.csv")
-    val memberMonthsRDD = loadCSVAsRDD(sc, "/Users/uttamkumar/Desktop/Training/InteliJ/MemberReportGenerator/data/member_months.csv")
+    val memberEligibilityRDD = loadCSVAsRDD(sc, "data/member_eligibility.csv")
+    val memberMonthsRDD = loadCSVAsRDD(sc, "data/member_months.csv")
 
     // Convert to DataFrames
     val memberEligibilityDF = toMemberEligibilityDF(spark, memberEligibilityRDD)
